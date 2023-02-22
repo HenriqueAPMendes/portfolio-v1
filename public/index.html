@@ -20,12 +20,12 @@
 
       </ul>
       <span>
-        <span class="lang">English</span>
+        <span class="lang">EN</span>
         <label class="lang-switch">
           <input type="checkbox" class="switcher" checked>
           <span class="slider"></span>
         </label>
-        <span class="lang">Português</span>
+        <span class="lang">PT-BR</span>
       </span>
     </nav>
 
@@ -119,10 +119,23 @@
     <div class="email-container">
       <h2>Contato</h2>
       <form action="GET">
-        <input type="text" class="name input" placeholder="Seu nome">
-        <input type="text" class="email input" placeholder="Seu e-mail">
-        <input type="text" class="subject input" placeholder="Assunto">
-        <textarea class="message input" cols="50" rows="10" placeholder="Mensagem"></textarea>
+
+        <div class="input-box">
+          <input type="text" class="name input" required>
+          <span class="placeholder">Seu nome</span>
+        </div>
+        <div class="input-box">
+          <input type="text" class="email input" required>
+          <span class="placeholder">Seu e-mail</span>
+        </div>
+        <div class="input-box">
+          <input type="text" class="subject input" required>
+          <span class="placeholder">Assunto</span>
+        </div>
+        <div class="input-box">
+          <textarea class="message input" cols="50" rows="10" required></textarea>
+          <span class="placeholder">Mensagem</span>
+        </div>
         <button type="submit">Enviar</button>
       </form>
     </div>

@@ -8,13 +8,13 @@ const data = {
         home: "<p>Olá, sou o Henrique.</p> <p> Sou desenvolvedor e atualmente trabalho com as seguintes tecnologias: </p>",
         about: "<p>Cursei meu ensino Fundamental e Médio no Colégio da Polícia Militar do Paraná (CPMPR), em Curitiba, Brasil. </p><p>Atualmente cursando Engenharia de Computação na Universidade Tecnológica Federal do Paraná (UTFPR).</p><p> Sempre fui apaixonado por tecnologia e aprender a construir coisas.</p>",
         curriculum: "Baixe meu currículo em PDF",
-        form: {
-            name: "Seu nome",
-            email: "Seu e-mail",
-            subject: "Assunto",
-            message: "Mensagem",
-            submit: "Enviar"
-        },
+        submit: "Enviar",
+        placeholders: [
+            "Seu nome",
+            "Seu e-mail",
+            "Assunto",
+            "Mensagem"
+        ],
         readMore: "Saiba mais",
         sourceCode: "Código fonte"
     },
@@ -28,13 +28,13 @@ const data = {
         home: "<p>Hello, I'm Henrique.</p> <p>I'm a software developer currently working with these technologies: </p>",
         about: " <p>I attended elementary and high school at Colégio da Polícia Militar do Paraná (CPMPR), in Curitiba, Brazil. </p> <p> Nowadays, I'm studying Computer Engineering at Universidade Tecnológica Federal do Paraná (UTFPR). </p><p> I've always been in love with technology and learning to build things. </p>",
         curriculum: "Download my CV",
-        form: {
-            name: "Your name",
-            email: "Your e-mail",
-            subject: "Subject",
-            message: "Message",
-            submit: "Submit"
-        },
+        submit: "Submit",
+        placeholders: [
+            "Your name",
+            "Your e-mail",
+            "Subject",
+            "Message"
+        ],
         readMore: "Read more",
         sourceCode: "Source code"
     }
@@ -50,6 +50,8 @@ const sourceCodeBtns = document.querySelectorAll('.card button a');
 const aboutMeTitle = document.querySelector('#about-me h2');
 const projectsTitle = document.querySelector('#projects h2');
 const contactTitle = document.querySelector('#contact h2');
+const placeholders = document.querySelectorAll('.input-box .input ~ span');
+const submitBtn = document.querySelector('form button');
 
 export function listenSwitch() {
     switcher.addEventListener('click', () => {
@@ -70,5 +72,9 @@ export function listenSwitch() {
         sourceCodeBtns.forEach(el => {
             el.innerHTML = data[lang].sourceCode;
         });
+        placeholders.forEach((el, i) => {
+            el.innerHTML = data[lang].placeholders[i];
+        });
+        submitBtn.innerHTML = data[lang].submit;
     });
 }
