@@ -15,8 +15,7 @@ const data = {
             "Assunto",
             "Mensagem"
         ],
-        readMore: "Saiba mais",
-        sourceCode: "Código fonte"
+        sourceCode: "Saiba mais"
     },
     "en": {
         home: "Home",
@@ -35,8 +34,7 @@ const data = {
             "Subject",
             "Message"
         ],
-        readMore: "Read more",
-        sourceCode: "Source code"
+        sourceCode: "Read more"
     }
 };
 
