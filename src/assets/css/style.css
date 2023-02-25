@@ -26,6 +26,7 @@ body {
   font-family: 'Open sans', sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
+  overflow-x: hidden;
 }
 
 section {
@@ -33,11 +34,57 @@ section {
   color: var(--white-color);
   padding: 20px;
   padding-top: 60px;
+  position: relative;
 }
 
 #home,
 #projects {
   background-color: var(--secondary-color);
+}
+
+.background  {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  left: 0;
+  top: 0;
+}
+
+#about-me {
+  display: grid;
+  place-items: center;
+}
+
+#about-me h2 {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+}
+
+.about-me-content {
+  display: flex;
+  align-items: center;
+}
+
+.about-me-text {
+  position: absolute;
+  left: 5vw;
+  max-width: 35vw;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 400px;
+}
+
+.links img {
+  width: 90px;
+  transition: all .5s ease-out;
+}
+
+.links img:hover {
+  transform: scale(1.2);
 }
 
 .email-container {
@@ -104,6 +151,10 @@ form button:hover {
   background: var(--primary-color-darker);
 }
 
+#menu-btn {
+  display: none;
+}
+
 header nav {
   width: 100%;
   position: fixed;
@@ -157,7 +208,6 @@ only screen and (max-device-width: 480px) {
     top: 0;
     width: 40%;
     height: 100%;
-    
   }
 
   header nav {
@@ -181,6 +231,22 @@ only screen and (max-device-width: 480px) {
     text-align: center;
   }
 
+  header nav::after {
+    content: 'x';
+    font-size: 2rem;
+    color: var(--white-color);
+    margin-bottom: 15vh;
+  }
+
+  .menu-btn-label::before {
+    content: 'x';
+    font-size: 2rem;
+    color: var(--white-color);
+    margin-bottom: 15vh;
+    display: block;
+    z-index: 3;
+    text-align: center;
+  }
 }
 
 .portfolio {
