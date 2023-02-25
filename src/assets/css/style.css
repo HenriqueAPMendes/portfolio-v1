@@ -48,7 +48,6 @@ section {
   border-radius: 10px;
   color: black;
   height: 80%;
-
 }
 
 .input-box {
@@ -148,6 +147,42 @@ header nav ul li a:hover::after {
   left: 25%;
 }
 
+/* mobile menu */
+
+@media only screen and (max-width: 480px),
+only screen and (max-device-width: 480px) {
+  header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    
+  }
+
+  header nav {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: end;
+    padding: 20px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 30vh;
+  }
+
+  header nav ul li {
+    margin: 60px 0;
+    text-align: center;
+  }
+
+}
+
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -197,6 +232,7 @@ header nav ul li a:hover::after {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   place-items: start center;
+  gap: 30px;
 }
 
 .stack {
